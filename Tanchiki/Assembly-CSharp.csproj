@@ -59,9 +59,11 @@
     <Analyzer Include="D:\2022.3.13f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Panel_Upravleniya_Tankom.cs" />
-    <Compile Include="Assets\Scripts\Klass_Obshih_Peremennih.cs" />
-    <Compile Include="Assets\Scripts\Upravlenie_Tankom.cs" />
+    <Compile Include="Assets\Scripts\Tank\Mous_pos.cs" />
+    <Compile Include="Assets\Scripts\Tank\Panel_Upravleniya_Tankom.cs" />
+    <Compile Include="Assets\Scripts\Tank\Klass_Obshih_Peremennih.cs" />
+    <Compile Include="Assets\Scripts\Tank\Upravlenie_Tankom.cs" />
+    <Compile Include="Assets\Scripts\Tank\Tank.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
