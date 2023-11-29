@@ -14,7 +14,7 @@ public class Panel_Upravleniya_Tankom : MonoBehaviour
 
     private void Otslejivanie_Najatiya_Strelok()
     {
-        if (Input.GetKey(KeyCode.UpArrow) & !Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.W) & !Input.GetKey(KeyCode.S))
         {
             klass_Obshih_Peremennih.Povorot_Verh_Global = true;
         }
@@ -22,7 +22,7 @@ public class Panel_Upravleniya_Tankom : MonoBehaviour
         {
             klass_Obshih_Peremennih.Povorot_Verh_Global = false;
         }
-        if (Input.GetKey(KeyCode.DownArrow) & !Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.S) & !Input.GetKey(KeyCode.W))
         {
             klass_Obshih_Peremennih.Povorot_Niz_Global = true;
         }
@@ -30,7 +30,7 @@ public class Panel_Upravleniya_Tankom : MonoBehaviour
         {
             klass_Obshih_Peremennih.Povorot_Niz_Global = false;
         }
-        if (Input.GetKey(KeyCode.LeftArrow) & !Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.A) & !Input.GetKey(KeyCode.D))
         {
             klass_Obshih_Peremennih.Povorot_Levo_Global = true;
         }
@@ -38,7 +38,7 @@ public class Panel_Upravleniya_Tankom : MonoBehaviour
         {
             klass_Obshih_Peremennih.Povorot_Levo_Global = false;
         }
-        if (Input.GetKey(KeyCode.RightArrow) & !Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.D) & !Input.GetKey(KeyCode.A))
         {
             klass_Obshih_Peremennih.Povorot_Pravo_Global = true;
         }
@@ -46,7 +46,7 @@ public class Panel_Upravleniya_Tankom : MonoBehaviour
         {
             klass_Obshih_Peremennih.Povorot_Pravo_Global = false;
         }
-        if (!Input.GetKey(KeyCode.RightArrow) & !Input.GetKey(KeyCode.LeftArrow) & !Input.GetKey(KeyCode.DownArrow) & !Input.GetKey(KeyCode.UpArrow))
+        if (!Input.GetKey(KeyCode.D) & !Input.GetKey(KeyCode.A) & !Input.GetKey(KeyCode.S) & !Input.GetKey(KeyCode.W))
         {
             klass_Obshih_Peremennih.Povorot_Pravo_Global = false;
             klass_Obshih_Peremennih.Povorot_Levo_Global = false;
