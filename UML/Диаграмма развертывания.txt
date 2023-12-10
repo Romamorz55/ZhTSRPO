@@ -1,0 +1,23 @@
+@startuml
+
+title Диаграмма развертывания
+
+package "Клиентская платформа" {
+    actor Player as player
+
+    component "Игрововая среда" as gameEngine
+}
+
+package "Игрвой сервер" {
+    component "Игровой сервер" as gameServer
+}
+
+package "Хранилище ресурсов" {
+    component "Хранилище ресурсов" as resourceStorage
+}
+
+player --> gameEngine
+gameEngine --> resourceStorage
+gameEngine --> gameServer
+
+@enduml

@@ -11,7 +11,7 @@ public class Mous_pos : MonoBehaviour
     private float gradus_1_po_width;
     private float gradus_1_po_higth;
     private float seredina_po_width;
-    private float gorizont_po_heigth;
+    //private float gorizont_po_heigth;
     private float ugol_levo_pravo;
     private float ugol_Verh_niz;
 
@@ -20,10 +20,10 @@ public class Mous_pos : MonoBehaviour
     {
         width_okna = Screen.width;
         hight_okna = Screen.height;
-        gradus_1_po_higth = (float)hight_okna / 45;
+        //gradus_1_po_higth = (float)hight_okna / 45;
         gradus_1_po_width = (float)width_okna / 170; //85 градусов в каждую сторону
         seredina_po_width = (float)width_okna / 2;
-        gorizont_po_heigth = 10 * gradus_1_po_higth;
+        //gorizont_po_heigth = 10 * gradus_1_po_higth;
     }
 
 
@@ -49,15 +49,7 @@ public class Mous_pos : MonoBehaviour
         {
             ugol_levo_pravo = (x - seredina_po_width) / gradus_1_po_width;
         }
-        if (y <= gorizont_po_heigth)
-        {
-            ugol_Verh_niz = (gorizont_po_heigth - y) / gorizont_po_heigth;
-        }
-        else
-        {
-            ugol_Verh_niz = 360 - (y - gorizont_po_heigth) / gradus_1_po_higth;
-        }
-        ssilka_na_Klass_Obshih.ugol_vert_Pushki = ugol_Verh_niz;
+       
         ssilka_na_Klass_Obshih.ugol_horizont_Pushki = ugol_levo_pravo;
     }
 }

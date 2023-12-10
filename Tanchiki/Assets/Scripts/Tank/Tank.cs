@@ -28,7 +28,7 @@ public class Tank_2 : MonoBehaviour
 
         pushka_Fiktivnaya_tanka = transform.GetChild(0).gameObject.transform.GetChild(0).gameObject;
         pushka_tanka = pushka_Fiktivnaya_tanka.transform.GetChild(0).gameObject;
-        camera_zadnego_vida = transform.GetChild(1).gameObject;
+        camera_zadnego_vida = bashnya_tanka.transform.GetChild(2).gameObject;
         camera_pushki = pushka_tanka.transform.GetChild(0).gameObject;
         pushka_Fiktivnaya_tanka.transform.Rotate(-10f, 0, 0, Space.Self);
     }
@@ -94,7 +94,7 @@ public class Tank_2 : MonoBehaviour
         GameObject snaryad = Instantiate(snaryad_abstrakt) as GameObject;
         snaryad.transform.position = pushka_tanka.transform.position;
         snaryad.transform.rotation = pushka_tanka.transform.rotation;
-        snaryad.transform.Translate(0.4f, 0f, 2f, Space.Self);
+        snaryad.transform.Translate(0.4f, 0f, 1f, Space.Self);
         snaryad.GetComponent<Rigidbody>().AddRelativeForce(snaryad.transform.forward * moshnost_Vistrela, ForceMode.VelocityChange);
         Play_Audio(clip_vistrel);
 

@@ -1,0 +1,227 @@
+@startuml
+left to right direction
+
+class MonoBehaviour{
+   Start(): void;
+   Update(): void;
+   
+}
+
+class Klass_Obshih_Peremennih {
+   + Povorot_Levo_Global: bool;
+   + Povorot_Verh_Global: bool;
+   + Povorot_Pravo_Global: bool;
+   + Povorot_Niz_Global: bool;
+   + vremya_mejdu_Vestrelami: float;
+   + ugol_vert_Pushki: float;
+   + ugol_horizont_Pushki: float;
+   + audioSource: AudioSource;
+   + clip_tank_destroy: AudioClip;
+  ..
+   + Zvuk_Razrusheniya_tanka(): void
+   - Play_Audio(AudioClip clip): void
+}
+
+class Tank {
+    - _obsh_Perem: GameObject;
+    - bashnya_tanka: GameObject;
+    - pushka_Fiktivnaya_tanka: GameObject;
+    - pushka_tanka: GameObject;
+    - camera_pushki: GameObject;
+    - camera_zadnego_vida:  GameObject;
+    + snaryad_abstrakt: GameObject;
+    - moshnost_Vistrela: float;
+    + clip_vistrel: AudioClip;
+    + najata_knopka_vistrel: bool;
+    + vistrel_razreshen: bool;
+    + schetchik_vremya_mejdu_Vestrelami: float;
+    + vremya_mejdu_Vestrelam: float;
+    ..
+    Start(): void;
+    Update(): void;
+    - Povorot_Bashni_i_Pushki(): void;
+    - Perekluchenie_Kameri(): void;
+    - Proverka_na_Vistrel(): void;
+    - Vistrel_Snaryada(): void;
+    -Play_Audio(AudioClip clip): void;
+}
+
+class Upravlenie_Tankom
+{
+    + Klass_Obshih_Peremennih ssilka_na_Klass_Obshih;
+    + tank_abstrakt: GameObject;
+    - tank: GameObject;
+    - nachalnaya_poziciya_tanka: Vector3;
+    - float napravlenie_Dvijeniya_Tanka;
+    - float napravlenie_Povorota_Tanka;
+    - float skorost_Dvijeniya_Tanka = 4f;
+    - float skorost_Povorota_Tanka = 50f;
+    ..
+    - Start(): void;
+    Update(): void;
+    - Peremeshenie_Tanka(): void;
+}
+
+class Mous_pos
+{
+    + Klass_Obshih_Peremennih ssilka_na_Klass_Obshih;
+    - Vector3 LastMousPos;
+    - int width_okna;
+    - int hight_okna;
+    - float gradus_1_po_width;
+    - float gradus_1_po_higth;
+    - float seredina_po_width;
+    - float ugol_levo_pravo;
+    - float ugol_Verh_niz;
+    ..
+    Start(): viod;
+    Update(): void;
+    - Opredelenie_Koord_Mouse(): void;
+}
+
+
+class Panel_Upravleniya_Tankom
+{
+    + Klass_Obshih_Peremennih klass_Obshih_Peremennih;
+    ..
+    - Update(): void;
+    - Otslejivanie_Najatiya_Strelok(): void;
+}
+
+class Player_Manager
+{
+    + playerHealth: static int;
+    + gameOver: static bool;
+    + playerHealthText: TextMeshProUGUI;
+    ..
+    Start(): void; 
+    Update(): void;
+    + Damage (int damageCount): static void;
+}
+
+class Tank_Enemy
+{
+    - _obsh_Perem: GameObject;
+    - bashnya_tanka: GameObject;
+    - pushka_Fiktivnaya_tanka: GameObject;
+    - pushka_tanka: GameObject;
+    + snaryad_abstrakt: GameObject;
+    - moshnost_Vistrela: float;
+    + clip_vistrel: AudioClip;
+    - vistrel_razreshen: bool;
+    - schetchik_vremya_mejdu_Vestrelami: float;
+    + vremya_mejdu_Vestrelami: float;
+    ..
+    Start(): void;
+    Update(): void;
+    - Vistrel(): void;
+    - Vistrel_Snaryada(): void;
+    - Play_Audio(AudioClip clip); void;
+}
+
+class Snaryad
+{
+    - schetchik_vremeni: float;
+    + vzriv_abstrakt: GameObject;
+    + vzriv_Jeltiy_abstrakt: GameObject;
+    - _obsh_Perem: GameObject;
+    + vzriv_Explode_Tank_abstrakt: GameObject;
+    + Tank_Destroy_abstrack: GameObject;
+    ..
+    Start(): void;
+    Update(): void;
+    - OnTriggerEnter(Collider other): void;
+}
+
+class Snaryad2
+{
+    - schetchik_vremeni: float;
+    + vzriv_abstrakt: GameObject;
+    + vzriv_Jeltiy_abstrakt: GameObject;
+    - _obsh_Perem: GameObject;
+    + vzriv_Explode_Tank_abstrakt: GameObject;
+    + Tank_Destroy_abstrack: GameObject;
+    ..
+    Start(): void;
+    Update(): void;
+    - OnTriggerEnter(Collider other): void;
+}
+
+class Tank_Destroy
+{
+    + otschet_vkluchen: bool;
+    schetchik_vremeni: float;
+    ..
+    Update(): void;
+}
+
+class Vzriv
+{
+    - schetchik_vremeni: float;
+    + clip: AudioClip;
+    ..
+    Start(): void;
+    Update(): void;
+    - Play_Audio(AudioClip clip): void;
+}
+
+class Vzriv_EXpiore_Tank
+{
+    - forse: float;
+    + tank: GameObject;
+    ..
+    Start(): void;
+    - Explode(): void;
+}
+
+class Enemy
+{
+    + visionRadius: float ; // Радиус обзора бота
+    + visionAngle: float; // Угол обзора бота
+    + chaseDistanceL: float; // Дистанция для начала преследования игрока
+    + player: Transform ; // Ссылка на игрока
+    - agent: NavMeshAgent ;
+    - lineRenderer: LineRenderer;
+    ..
+    Start(): void;
+    ScanForPlayer(): IEnumerator;
+    CheckForPlayer(): void;
+    ChasePlayer(Vector3 playerPosition): void;
+    UpdateVisionCone(float angleToPlayer): void;
+    OnDrawGizmos(): void;
+    DirFromAngle(float angleInDegrees, bool angleIsGlobal): Vector3 ;
+}
+
+class Main_menu
+{
+    + PlayGame(): void;
+    + ExitGame(): void;
+}
+
+class Pause_Menu
+{
+    + PauseGame: bool;
+    + pauseGameMenu: GameObject;
+    Update(): void;
+    + Resume(): void;    
+    + Pause(): void;
+    + LosdMenu(): void;
+}
+
+MonoBehaviour <|-- Klass_Obshih_Peremennih 
+MonoBehaviour <|-- Tank  
+MonoBehaviour <|-- Upravlenie_Tankom 
+MonoBehaviour <|-- Mous_pos 
+MonoBehaviour <|-- Panel_Upravleniya_Tankom 
+MonoBehaviour <|-- Player_Manager 
+MonoBehaviour <|-- Tank_Enemy 
+MonoBehaviour <|-- Snaryad 
+MonoBehaviour <|-- Snaryad2 
+MonoBehaviour <|-- Tank_Destroy 
+MonoBehaviour <|-- Vzriv 
+MonoBehaviour <|-- Vzriv_EXpiore_Tank 
+MonoBehaviour <|-- Enemy  
+MonoBehaviour <|-- Main_menu 
+MonoBehaviour <|-- Pause_Menu 
+
+@enduml

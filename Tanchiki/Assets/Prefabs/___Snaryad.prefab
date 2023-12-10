@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 10758160809800221}
   - component: {fileID: 2007484962384839154}
   - component: {fileID: 7170255008683309753}
-  - component: {fileID: 4722315210309462455}
+  - component: {fileID: 8230852872012235692}
   m_Layer: 0
   m_Name: ___Snaryad
   m_TagString: Untagged
@@ -84,7 +84,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.105330974, y: 0.105330825, z: 0.102721095}
   m_Center: {x: -0.0029048026, y: 0.0029048324, z: -0.030627906}
---- !u!114 &4722315210309462455
+--- !u!114 &8230852872012235692
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,6 +98,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vzriv_abstrakt: {fileID: 8376555385561059906, guid: 6f0d35e3f6cb2f34eaba128b1489d78d, type: 3}
   vzriv_Jeltiy_abstrakt: {fileID: 3717507141227200948, guid: de66cbd5605f62e49b3de708860f6051, type: 3}
+  vzriv_Explode_Tank_abstrakt: {fileID: 796990259834404283, guid: a18dc3c5cd89b2a42b888bba9b0313fa, type: 3}
+  Tank_Destroy_abstrack: {fileID: 5151203561143521153, guid: 985ac22437d9af8478b71c750f595777, type: 3}
 --- !u!1001 &6152024962400722139
 PrefabInstance:
   m_ObjectHideFlags: 0

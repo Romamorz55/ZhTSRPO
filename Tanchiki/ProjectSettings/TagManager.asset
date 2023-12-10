@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy_Tank
+  - Tank_Destroy
+  - Tank_Player
   layers:
   - Default
   - TransparentFX
